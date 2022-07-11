@@ -26,7 +26,7 @@ tasks.named('test') {
 
 jar {
 	manifest {
-		attributes 'Main-Class': 'TreasureHuntApplication'
+		attributes 'Main-Class': 'com.smaj.treasureHunt.TreasureHuntApplication'
 	}
 	exclude 'META-INF/*.RSA', 'META-INF/*.SF','META-INF/*.DSA'
 }

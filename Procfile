@@ -1,1 +1,1 @@
-web: java $JAVA_OPTS -Dserver.port=$PORT -cp com.smaj.treasureHunt.treasureHuntApplication -jar target/*.jar
+web: java $JAVA_OPTS -Dserver.port=$PORT -jar target/*.jar

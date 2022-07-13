@@ -18,9 +18,7 @@ public class TreasureHuntService {
         this.treasureHuntRepository = treasureHuntRepository;
     }
 
-    public TreasureHunt addTreasureHunt(String name) {
-        TreasureHunt treasureHunt = new TreasureHunt();
-        treasureHunt.setName(name);
+    public TreasureHunt addTreasureHunt(TreasureHunt treasureHunt) {
         return treasureHuntRepository.save(treasureHunt);
     }
 

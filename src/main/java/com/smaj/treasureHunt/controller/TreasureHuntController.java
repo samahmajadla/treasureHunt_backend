@@ -17,8 +17,8 @@ public class TreasureHuntController {
     }
 
     @PostMapping("/addTreasureHunt")
-    public ResponseEntity addTreasureHunt(@RequestParam String name){
-        return ResponseEntity.ok(treasureHuntService.addTreasureHunt(name));
+    public ResponseEntity addTreasureHunt(@RequestBody TreasureHunt treasureHunt){
+        return ResponseEntity.ok(treasureHuntService.addTreasureHunt(treasureHunt));
     }
 
     @GetMapping("/getTreasureHunt")

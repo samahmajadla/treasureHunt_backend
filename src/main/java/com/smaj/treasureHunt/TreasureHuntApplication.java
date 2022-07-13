@@ -9,7 +9,6 @@ import org.springframework.web.context.support.AnnotationConfigWebApplicationCon
 public class TreasureHuntApplication {
 
 	public static void main(String[] args) {
-
 		SpringApplication app = new SpringApplication(TreasureHuntApplication.class);
 		app.setApplicationContextFactory((type)-> new AnnotationConfigWebApplicationContext());
 		app.run(args);

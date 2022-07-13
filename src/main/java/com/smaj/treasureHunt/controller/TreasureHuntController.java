@@ -1,5 +1,6 @@
 package com.smaj.treasureHunt.controller;
 
+import com.smaj.treasureHunt.model.TreasureHunt;
 import com.smaj.treasureHunt.service.TreasureHuntService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

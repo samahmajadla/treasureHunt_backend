@@ -26,7 +26,7 @@ public class AdminService {
 
     public boolean isAdmin(String password){
         Admin admin = adminRepository.findById(valueOf(10)).get();
-        if (password == admin.getPassword()){
+        if (password.equals(admin.getPassword())){
             return true;
         } else {
             return false;

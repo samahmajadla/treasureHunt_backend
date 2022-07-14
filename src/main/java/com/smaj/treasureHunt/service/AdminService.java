@@ -15,7 +15,7 @@ public class AdminService {
     @Autowired
     AdminRepository adminRepository;
 
-    public AdminService(AdminRepository adminRepository) {
+    public AdminService(@Autowired AdminRepository adminRepository) {
         this.adminRepository = adminRepository;
     }
 

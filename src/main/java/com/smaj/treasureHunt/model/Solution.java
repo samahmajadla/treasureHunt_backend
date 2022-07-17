@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 import javax.persistence.*;
 
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type")
+@JsonTypeInfo(use = JsonTypeInfo.Id.DEDUCTION)
 @JsonSubTypes({
         @JsonSubTypes.Type(value = LocationBasedSolution.class, name = "location"),
         @JsonSubTypes.Type(value = StringMatchSolution.class, name = "string")})

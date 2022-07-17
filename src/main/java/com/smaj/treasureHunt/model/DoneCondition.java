@@ -21,18 +21,6 @@ public class DoneCondition {
     @JsonManagedReference
     private List<Solution> solutions;
 
-    @OneToOne
-    @JsonBackReference
-    private TreasureHuntStep step;
-
-    public TreasureHuntStep getStep() {
-        return step;
-    }
-
-    public void setStep(TreasureHuntStep step) {
-        this.step = step;
-    }
-
     private boolean evaluateConditionMet(){
         return false;
     }

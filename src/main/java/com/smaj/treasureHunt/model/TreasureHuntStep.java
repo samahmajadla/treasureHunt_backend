@@ -30,7 +30,6 @@ public class TreasureHuntStep {
     private CompletionStatus completionStatus;
 
     @OneToOne
-    @JsonManagedReference
     private DoneCondition doneCondition;
 
     @ManyToOne

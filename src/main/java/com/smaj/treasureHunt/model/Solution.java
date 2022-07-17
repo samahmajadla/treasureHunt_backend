@@ -1,9 +1,15 @@
 package com.smaj.treasureHunt.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 import javax.persistence.*;
 
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type")
+@JsonSubTypes({
+        @JsonSubTypes.Type(value = LocationBasedSolution.class, name = "location"),
+        @JsonSubTypes.Type(value = StringMatchSolution.class, name = "string")})
 @Entity
 @Inheritance(strategy= InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "solution_type")

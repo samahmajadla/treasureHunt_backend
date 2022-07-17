@@ -10,7 +10,19 @@ import javax.persistence.Entity;
 @DiscriminatorValue("location_based")
 public class LocationBasedSolution extends Solution{
 
+    public LocationBasedSolution() {
+
+    }
+
     private Point location;
+
+    public Point getLocation() {
+        return location;
+    }
+
+    public void setLocation(Point location) {
+        this.location = location;
+    }
 
     @Override
     public boolean checkSolution(String answer) {

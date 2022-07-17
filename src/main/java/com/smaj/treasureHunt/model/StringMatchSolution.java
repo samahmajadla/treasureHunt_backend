@@ -7,6 +7,9 @@ import javax.persistence.Entity;
 @DiscriminatorValue("string_match")
 public class StringMatchSolution extends Solution{
 
+    public StringMatchSolution() {
+    }
+
     private String answer;
 
     public String getAnswer() {

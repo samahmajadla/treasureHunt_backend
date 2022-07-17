@@ -3,6 +3,7 @@ package com.smaj.treasureHunt.model;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import org.hibernate.annotations.Cascade;
 
 import javax.persistence.*;
 
@@ -26,6 +27,7 @@ public abstract class Solution {
 
     @JsonBackReference
     @ManyToOne
+    @Cascade(org.hibernate.annotations.CascadeType.ALL)
     private DoneCondition doneCondition;
 
     public long getId() {

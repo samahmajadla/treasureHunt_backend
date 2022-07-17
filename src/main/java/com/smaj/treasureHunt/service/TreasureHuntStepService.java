@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class TreasureHuntStepService {
@@ -30,5 +31,15 @@ public class TreasureHuntStepService {
 
     public void deleteAllStepsForTreasureHunt(long treasureHuntId) {
         treasureHuntStepRepository.deleteAllByTreasureHuntId(treasureHuntId);
+    }
+
+    public TreasureHuntStep updateStep(TreasureHuntStep step) throws Exception{
+        Optional<TreasureHuntStep> byId = treasureHuntStepRepository.findById(step.getId());
+        if (byId.isPresent()) {
+           return treasureHuntStepRepository.save(step);
+        }
+        else {
+            throw new Exception();
+        }
     }
 }

@@ -29,6 +29,7 @@ public class TreasureHuntStepController {
         try {
            return ResponseEntity.ok(treasureHuntStepService.updateStep(step));
         } catch (Exception e){
+            System.out.println(e);
             return new ResponseEntity(HttpStatus.BAD_REQUEST);
         }
     }

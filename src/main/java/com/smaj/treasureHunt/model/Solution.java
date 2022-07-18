@@ -27,7 +27,6 @@ public abstract class Solution {
 
     @JsonBackReference
     @ManyToOne
-    @JoinColumn(name="done_condition_id")
     private DoneCondition doneCondition;
 
     public DoneCondition getDoneCondition() {

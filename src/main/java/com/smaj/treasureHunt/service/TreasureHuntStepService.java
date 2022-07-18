@@ -1,5 +1,6 @@
 package com.smaj.treasureHunt.service;
 
+import com.smaj.treasureHunt.model.Solution;
 import com.smaj.treasureHunt.model.TreasureHuntStep;
 import com.smaj.treasureHunt.repository.TreasureHuntStepRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,9 +36,22 @@ public class TreasureHuntStepService {
 
     public TreasureHuntStep updateStep(TreasureHuntStep step) throws Exception{
         Optional<TreasureHuntStep> byId = treasureHuntStepRepository.findById(step.getId());
-
         if (byId.isPresent()) {
            return treasureHuntStepRepository.save(byId.get());
+        }
+        else {
+            throw new Exception();
+        }
+    }
+
+    public TreasureHuntStep addSolutionToStep(TreasureHuntStep step) throws Exception{
+        Optional<TreasureHuntStep> byId = treasureHuntStepRepository.findById(step.getId());
+        if (byId.isPresent()) {
+            List<Solution> solutions = step.getDoneCondition().getSolutions();
+            for (Solution solution : solutions) {
+
+            }
+            return treasureHuntStepRepository.save(byId.get());
         }
         else {
             throw new Exception();

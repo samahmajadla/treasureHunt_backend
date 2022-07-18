@@ -26,7 +26,7 @@ public abstract class Solution {
     private boolean solution_found;
 
     @JsonBackReference
-    @ManyToOne(cascade=CascadeType.ALL)
+    @ManyToOne(cascade=CascadeType.PERSIST)
     private DoneCondition doneCondition;
 
     public long getId() {

@@ -14,7 +14,6 @@ import javax.persistence.*;
 public class TreasureHuntStep {
 
     public TreasureHuntStep(){
-
         this.completionStatus = CompletionStatus.NOT_STARTED;
         this.doneCondition = new DoneCondition();
     }
@@ -31,7 +30,7 @@ public class TreasureHuntStep {
     @Enumerated(EnumType.STRING)
     private CompletionStatus completionStatus;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private DoneCondition doneCondition;
 
     @ManyToOne

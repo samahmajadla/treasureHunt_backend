@@ -14,14 +14,6 @@ public class DoneCondition {
     public DoneCondition(){
         conditionMet = false;
         this.solutions = new LinkedList<>();
-        LocationBasedSolution location = new LocationBasedSolution();
-        location.setLocation(new Point(1,4));
-
-        StringMatchSolution stringMatchSolution = new StringMatchSolution();
-        stringMatchSolution.setAnswer( "answer");
-
-        this.solutions.add(location);
-        this.solutions.add(stringMatchSolution);
     }
     @Id
     @GeneratedValue

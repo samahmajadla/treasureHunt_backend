@@ -17,7 +17,7 @@ public class DoneCondition {
     private long id;
 
     private boolean conditionMet;
-    @OneToMany(cascade = CascadeType.PERSIST)
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
     @JsonManagedReference
     private List<Solution> solutions;
 

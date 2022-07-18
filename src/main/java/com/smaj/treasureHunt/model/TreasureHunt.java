@@ -24,7 +24,7 @@ public class TreasureHunt {
     private String creator;
 
     private String name;
-    @OneToMany(mappedBy = "treasureHunt", cascade = CascadeType.All)
+    @OneToMany(mappedBy = "treasureHunt", cascade = CascadeType.ALL)
     @JsonManagedReference
     private List<TreasureHuntStep> steps;
 

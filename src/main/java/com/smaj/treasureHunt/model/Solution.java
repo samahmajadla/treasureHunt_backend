@@ -26,8 +26,7 @@ public abstract class Solution {
     private boolean solution_found;
 
     @JsonBackReference
-    @ManyToOne
-    @Cascade(org.hibernate.annotations.CascadeType.ALL)
+    @ManyToOne(CascadeType.ALL)
     private DoneCondition doneCondition;
 
     public long getId() {

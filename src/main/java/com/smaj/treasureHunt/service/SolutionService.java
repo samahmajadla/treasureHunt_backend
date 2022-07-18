@@ -21,16 +21,22 @@ public class SolutionService {
         return this.solutionRepository.save(solution);
     }
 
-    public boolean checkSolution(Solution guess, long id) {
+    public Solution checkSolution(Solution guess, long id) {
         Solution actualSolution = solutionRepository.findById(id).get();
-        
+
         if (guess.getClass().equals(LocationBasedSolution.class)){
             LocationBasedSolution locatonGuess = (LocationBasedSolution) guess;
-            return actualSolution.checkSolution(locatonGuess.getLocation());
+            if (actualSolution.checkSolution(locatonGuess.getLocation())){
+                return solutionRepository.save(actualSolution);
+
+            }
         }
        else {
             StringMatchSolution stringGuess = (StringMatchSolution) guess;
-            return actualSolution.checkSolution(stringGuess.getAnswer());
+            if (actualSolution.checkSolution(stringGuess.getAnswer())) {
+                return solutionRepository.save(actualSolution);
+            }
         }
+       return guess;
     }
 }

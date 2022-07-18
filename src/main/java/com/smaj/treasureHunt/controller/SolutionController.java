@@ -23,13 +23,9 @@ public class SolutionController {
         return ResponseEntity.ok(solutionService.addSolution(solution));
     }
 
-    @PostMapping("/checkStringSolution")
+    @PostMapping("/checkSolution")
     public ResponseEntity checkSolution(@RequestBody Solution guess, @RequestParam long id){
-        if (solutionService.checkSolution(guess, id)){
-            return ResponseEntity.ok().build();
-        }else{
-            return new ResponseEntity(HttpStatus.BAD_REQUEST);
-        }
+        return ResponseEntity.ok(solutionService.checkSolution(guess,id));
     }
 
 

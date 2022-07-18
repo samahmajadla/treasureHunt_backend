@@ -10,7 +10,7 @@ import javax.persistence.Entity;
 @Entity
 @DiscriminatorValue("location_based")
 @JsonTypeName("location")
-public class LocationBasedSolution extends Solution{
+public class LocationBasedSolution extends Solution {
 
     public LocationBasedSolution() {
 
@@ -29,14 +29,19 @@ public class LocationBasedSolution extends Solution{
     @Override
     public boolean checkSolution(Object guess) {
         Point point = (Point) guess;
-       if (location.getX() == point.getX() && location.getY() == point.getY()){
-           this.setSolution_found(true);
-           return true;
-       } else {
+        double actual_x = location.getX();
+        double actual_y = location.getY();
 
 
-           return false;
-       }
+        double guess_x = point.getX();
+        double guess_y = point.getY();
+        if (Math.abs(actual_x - guess_x) < 100) {
+            if (Math.abs(actual_y - guess_y) < 100) {
+                this.setSolution_found(true);
+                return true;
+            }
+        }
+        return false;
     }
 
 }

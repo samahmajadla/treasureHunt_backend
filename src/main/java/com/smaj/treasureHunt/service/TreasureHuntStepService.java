@@ -44,9 +44,13 @@ public class TreasureHuntStepService {
         }
     }
 
-    public boolean isStepComplete(long id) {
+    public TreasureHuntStep isStepComplete(long id) {
         TreasureHuntStep treasureHuntStep = treasureHuntStepRepository.findById(id).get();
-        return treasureHuntStep.getDoneCondition().isConditionMet();
+        boolean conditionMet = treasureHuntStep.getDoneCondition().evaluateConditionMet();
+        if (conditionMet){
+            treasureHuntStepRepository.save(treasureHuntStep);
+        }
+        return treasureHuntStep;
     }
 
 

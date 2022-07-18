@@ -33,7 +33,7 @@ public class DoneCondition {
     @JoinColumn(name = "done_condition_id")
     private List<Solution> solutions;
 
-    private void evaluateConditionMet(){
+    public boolean evaluateConditionMet(){
         boolean solved = true;
         for (Solution solution : solutions) {
             if (!solution.isSolution_found()){
@@ -42,6 +42,7 @@ public class DoneCondition {
             }
         }
         conditionMet = solved;
+        return conditionMet;
     }
 
     public boolean isConditionMet() {

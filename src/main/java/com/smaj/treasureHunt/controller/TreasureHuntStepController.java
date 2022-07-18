@@ -52,11 +52,7 @@ public class TreasureHuntStepController {
 
     @GetMapping("/isStepComplete")
     public ResponseEntity isStepComplete(@RequestParam long id){
-        if (treasureHuntStepService.isStepComplete(id)){
-            return ResponseEntity.ok().build();
-        } else{
-            return new ResponseEntity(HttpStatus.BAD_REQUEST);
-        }
+       return ResponseEntity.ok(treasureHuntStepService.isStepComplete(id));
     }
 
 }

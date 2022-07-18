@@ -7,7 +7,7 @@ import org.hibernate.annotations.Cascade;
 
 import javax.persistence.*;
 
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME)
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "type")
 @JsonSubTypes({
         @JsonSubTypes.Type(value = LocationBasedSolution.class, name = "location"),
         @JsonSubTypes.Type(value = StringMatchSolution.class, name = "string")})

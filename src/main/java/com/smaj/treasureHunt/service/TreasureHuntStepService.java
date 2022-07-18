@@ -37,7 +37,7 @@ public class TreasureHuntStepService {
         Optional<TreasureHuntStep> byId = treasureHuntStepRepository.findById(step.getId());
 
         if (byId.isPresent()) {
-           return treasureHuntStepRepository.save(step);
+           return treasureHuntStepRepository.save(byId.get());
         }
         else {
             throw new Exception();

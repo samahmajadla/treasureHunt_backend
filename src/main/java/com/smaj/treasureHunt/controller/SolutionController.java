@@ -23,6 +23,15 @@ public class SolutionController {
         return ResponseEntity.ok(solutionService.addSolution(solution));
     }
 
+    @PostMapping("/checkStringSolution")
+    public ResponseEntity checkSolution(@RequestBody Solution guess, @RequestParam long id){
+        if (solutionService.checkSolution(guess, id)){
+            return ResponseEntity.ok().build();
+        }else{
+            return new ResponseEntity(HttpStatus.BAD_REQUEST);
+        }
+    }
+
 
 }
 

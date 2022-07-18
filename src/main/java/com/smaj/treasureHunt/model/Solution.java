@@ -53,7 +53,7 @@ public abstract class Solution {
         this.solution_found = solution_found;
     }
 
-    public abstract boolean checkSolution(String answer);
+    public abstract boolean checkSolution(Object answer);
 
 
 }

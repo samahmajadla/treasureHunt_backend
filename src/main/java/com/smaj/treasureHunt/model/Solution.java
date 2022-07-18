@@ -30,6 +30,14 @@ public abstract class Solution {
     @JoinColumn(name="doneCondition_id")
     private DoneCondition doneCondition;
 
+    public DoneCondition getDoneCondition() {
+        return doneCondition;
+    }
+
+    public void setDoneCondition(DoneCondition doneCondition) {
+        this.doneCondition = doneCondition;
+    }
+
     public long getId() {
         return id;
     }

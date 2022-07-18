@@ -13,6 +13,7 @@ public class TreasureHunt {
 
     public TreasureHunt(){
         this.completionStatus = CompletionStatus.NOT_STARTED;
+        this.steps = new LinkedList<>();
     }
     @Id
     @GeneratedValue
@@ -23,7 +24,7 @@ public class TreasureHunt {
     private String creator;
 
     private String name;
-    @OneToMany(mappedBy = "treasureHunt")
+    @OneToMany(mappedBy = "treasureHunt", cascade = CascadeType.All)
     @JsonManagedReference
     private List<TreasureHuntStep> steps;
 

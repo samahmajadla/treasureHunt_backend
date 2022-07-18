@@ -27,6 +27,7 @@ public abstract class Solution {
 
     @JsonBackReference
     @ManyToOne(fetch = FetchType.EAGER, cascade=CascadeType.ALL)
+    @JoinColumn(name="doneCondition_id")
     private DoneCondition doneCondition;
 
     public long getId() {

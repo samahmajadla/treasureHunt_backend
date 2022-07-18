@@ -35,7 +35,7 @@ public class TreasureHuntStep {
 
     @ManyToOne
     @JsonBackReference
-    @JoinColumn(name="treasure_hunt_id")
+    @JoinColumn(name="treasureHunt_id")
     private TreasureHunt treasureHunt;
 
     public long getId() {

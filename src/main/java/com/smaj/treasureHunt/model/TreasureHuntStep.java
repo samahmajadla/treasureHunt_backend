@@ -14,7 +14,9 @@ import javax.persistence.*;
 public class TreasureHuntStep {
 
     public TreasureHuntStep(){
+
         this.completionStatus = CompletionStatus.NOT_STARTED;
+        this.doneCondition = new DoneCondition();
     }
     @Id
     @GeneratedValue

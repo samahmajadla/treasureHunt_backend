@@ -37,11 +37,17 @@ public class TreasureHuntStepService {
     public TreasureHuntStep updateStep(TreasureHuntStep step) throws Exception{
         Optional<TreasureHuntStep> byId = treasureHuntStepRepository.findById(step.getId());
         if (byId.isPresent()) {
-           return treasureHuntStepRepository.save(byId.get());
+            return treasureHuntStepRepository.save(byId.get());
         }
         else {
             throw new Exception();
         }
     }
+
+    public boolean isStepComplete(long id) {
+        TreasureHuntStep treasureHuntStep = treasureHuntStepRepository.findById(id).get();
+        return treasureHuntStep.getDoneCondition().isConditionMet();
+    }
+
 
 }

@@ -17,7 +17,7 @@ public class DoneCondition {
     private long id;
 
     private boolean conditionMet;
-    @OneToMany(mappedBy = "doneCondition")
+    @OneToMany
     @JsonManagedReference
     private List<Solution> solutions;
 

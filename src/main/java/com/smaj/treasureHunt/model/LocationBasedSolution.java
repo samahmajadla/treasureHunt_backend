@@ -1,5 +1,6 @@
 package com.smaj.treasureHunt.model;
 
+import com.fasterxml.jackson.annotation.JsonTypeName;
 import org.springframework.beans.factory.parsing.Location;
 import org.springframework.data.geo.Point;
 
@@ -8,6 +9,7 @@ import javax.persistence.Entity;
 
 @Entity
 @DiscriminatorValue("location_based")
+@JsonTypeName("location")
 public class LocationBasedSolution extends Solution{
 
     public LocationBasedSolution() {

@@ -1,10 +1,13 @@
 package com.smaj.treasureHunt.model;
 
+import com.fasterxml.jackson.annotation.JsonTypeName;
+
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 
 @Entity
 @DiscriminatorValue("string_match")
+@JsonTypeName("string")
 public class StringMatchSolution extends Solution{
 
     public StringMatchSolution() {

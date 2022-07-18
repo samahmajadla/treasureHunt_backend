@@ -27,8 +27,16 @@ public class LocationBasedSolution extends Solution{
     }
 
     @Override
-    public boolean checkSolution(String answer) {
-        return false;
+    public boolean checkSolution(Object guess) {
+        Point point = (Point) guess;
+       if (location.getX() == point.getX() && location.getY() == point.getY()){
+           this.setSolution_found(true);
+           return true;
+       } else {
+
+
+           return false;
+       }
     }
 
 }

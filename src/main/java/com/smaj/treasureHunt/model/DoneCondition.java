@@ -33,8 +33,15 @@ public class DoneCondition {
     @JoinColumn(name = "done_condition_id")
     private List<Solution> solutions;
 
-    private boolean evaluateConditionMet(){
-        return false;
+    private void evaluateConditionMet(){
+        boolean solved = true;
+        for (Solution solution : solutions) {
+            if (!solution.isSolution_found()){
+                solved = false;
+                break;
+            }
+        }
+        conditionMet = solved;
     }
 
     public boolean isConditionMet() {

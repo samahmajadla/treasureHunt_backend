@@ -12,6 +12,7 @@ public class DoneCondition {
 
     public DoneCondition(){
         conditionMet = false;
+        this.solutions = new LinkedList<>();
     }
     @Id
     @GeneratedValue

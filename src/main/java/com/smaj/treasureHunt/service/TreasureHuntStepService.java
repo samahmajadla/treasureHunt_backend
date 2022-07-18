@@ -44,17 +44,4 @@ public class TreasureHuntStepService {
         }
     }
 
-    public TreasureHuntStep addSolutionToStep(TreasureHuntStep step) throws Exception{
-        Optional<TreasureHuntStep> byId = treasureHuntStepRepository.findById(step.getId());
-        if (byId.isPresent()) {
-            List<Solution> solutions = step.getDoneCondition().getSolutions();
-            for (Solution solution : solutions) {
-
-            }
-            return treasureHuntStepRepository.save(byId.get());
-        }
-        else {
-            throw new Exception();
-        }
-    }
 }

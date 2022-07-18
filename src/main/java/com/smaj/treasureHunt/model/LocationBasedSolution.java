@@ -35,8 +35,8 @@ public class LocationBasedSolution extends Solution {
 
         double guess_x = point.getX();
         double guess_y = point.getY();
-        if (Math.abs(actual_x - guess_x) < 100) {
-            if (Math.abs(actual_y - guess_y) < 100) {
+        if (Math.abs(actual_x - guess_x) < .01) {
+            if (Math.abs(actual_y - guess_y) < .01) {
                 this.setSolution_found(true);
                 return true;
             }

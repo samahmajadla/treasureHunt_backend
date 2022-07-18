@@ -25,8 +25,8 @@ public class SolutionService {
         Solution actualSolution = solutionRepository.findById(id).get();
 
         if (guess.getClass().equals(LocationBasedSolution.class)){
-            LocationBasedSolution locatonGuess = (LocationBasedSolution) guess;
-            if (actualSolution.checkSolution(locatonGuess.getLocation())){
+            LocationBasedSolution locationBasedSolution = (LocationBasedSolution) guess;
+            if (actualSolution.checkSolution(locationBasedSolution.getLocation())){
                 return solutionRepository.save(actualSolution);
 
             }

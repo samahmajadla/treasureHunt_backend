@@ -22,6 +22,12 @@ public class TreasureHuntController {
         return ResponseEntity.ok(treasureHuntService.addTreasureHunt(treasureHunt));
     }
 
+    @PutMapping("/updateTreasureHunt")
+    public ResponseEntity updateTreasureHunt(@RequestBody TreasureHunt treasureHunt){
+        return ResponseEntity.ok(treasureHuntService.addTreasureHunt(treasureHunt));
+
+    }
+
     @GetMapping("/getTreasureHunt")
     public ResponseEntity getTreasureHunt(@RequestParam long id){
         return ResponseEntity.ok(treasureHuntService.getTreasureHunt(id));

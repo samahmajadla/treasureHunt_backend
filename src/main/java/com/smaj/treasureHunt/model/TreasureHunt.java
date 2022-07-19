@@ -21,6 +21,7 @@ public class TreasureHunt {
 
     private String recipient;
 
+    private int currentStep;
     private String creator;
 
     private String name;
@@ -30,6 +31,14 @@ public class TreasureHunt {
 
     @Enumerated(EnumType.STRING)
     private CompletionStatus completionStatus;
+
+    public int getCurrentStep() {
+        return currentStep;
+    }
+
+    public void setCurrentStep(int currentStep) {
+        this.currentStep = currentStep;
+    }
 
     public long getId() {
         return id;

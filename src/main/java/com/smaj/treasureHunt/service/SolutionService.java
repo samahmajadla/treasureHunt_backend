@@ -23,20 +23,9 @@ public class SolutionService {
 
     public Solution checkSolution(Solution guess, long id) {
         Solution actualSolution = solutionRepository.findById(id).get();
-
-        if (guess.getClass().equals(LocationBasedSolution.class)){
-            LocationBasedSolution locationBasedSolution = (LocationBasedSolution) guess;
-            if (actualSolution.checkSolution(locationBasedSolution.getLocation())){
-                return solutionRepository.save(actualSolution);
-
-            }
+        if (actualSolution.checkSolution(guess)) {
+            return solutionRepository.save(actualSolution);
         }
-       else {
-            StringMatchSolution stringGuess = (StringMatchSolution) guess;
-            if (actualSolution.checkSolution(stringGuess.getAnswer())) {
-                return solutionRepository.save(actualSolution);
-            }
-        }
-       return guess;
+        return guess;
     }
 }

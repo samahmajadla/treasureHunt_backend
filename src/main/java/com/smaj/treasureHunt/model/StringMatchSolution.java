@@ -24,9 +24,9 @@ public class StringMatchSolution extends Solution{
     }
 
     @Override
-    public boolean checkSolution(Object guess) {
-        String string = (String) guess;
-        if (answer.equals(string)){
+    public boolean checkSolution(Solution guess) {
+        StringMatchSolution solutionGuess = (StringMatchSolution) guess;
+        if (answer.equals(solutionGuess.getAnswer())){
             this.setSolution_found(true);
             return true;
         } else{

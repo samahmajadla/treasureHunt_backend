@@ -27,16 +27,16 @@ public class LocationBasedSolution extends Solution {
     }
 
     @Override
-    public boolean checkSolution(Object guess) {
-        Point point = (Point) guess;
+    public boolean checkSolution(Solution guess) {
+        LocationBasedSolution solutionGuess = (LocationBasedSolution) guess;
         double actual_x = location.getX();
         double actual_y = location.getY();
 
 
-        double guess_x = point.getX();
-        double guess_y = point.getY();
-        if (Math.abs(actual_x - guess_x) < .01) {
-            if (Math.abs(actual_y - guess_y) < .01) {
+        double guess_x = solutionGuess.getLocation().getX();
+        double guess_y = solutionGuess.getLocation().getY();
+        if (Math.abs(actual_x - guess_x) < .005) {
+            if (Math.abs(actual_y - guess_y) < .005) {
                 this.setSolution_found(true);
                 return true;
             }

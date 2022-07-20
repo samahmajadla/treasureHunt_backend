@@ -29,6 +29,7 @@ public class DoneCondition {
         boolean solved = true;
         for (Solution solution : solutions) {
             if (!solution.isSolution_found()){
+                System.out.println(solution);
                 solved = false;
                 break;
             }

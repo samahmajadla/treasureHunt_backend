@@ -1,5 +1,6 @@
 package com.smaj.treasureHunt.service;
 
+import com.smaj.treasureHunt.model.CompletionStatus;
 import com.smaj.treasureHunt.model.Solution;
 import com.smaj.treasureHunt.model.TreasureHuntStep;
 import com.smaj.treasureHunt.repository.TreasureHuntStepRepository;
@@ -46,9 +47,10 @@ public class TreasureHuntStepService {
 
     public TreasureHuntStep isStepComplete(long id) {
         TreasureHuntStep treasureHuntStep = treasureHuntStepRepository.findById(id).get();
-        System.out.println(treasureHuntStep);
+
         boolean conditionMet = treasureHuntStep.getDoneCondition().evaluateConditionMet();
         if (conditionMet){
+            treasureHuntStep.setCompletionStatus(CompletionStatus.COMPLETED);
             treasureHuntStepRepository.save(treasureHuntStep);
         }
         return treasureHuntStep;

@@ -46,6 +46,7 @@ public class TreasureHuntStepService {
 
     public TreasureHuntStep isStepComplete(long id) {
         TreasureHuntStep treasureHuntStep = treasureHuntStepRepository.findById(id).get();
+        System.out.println(treasureHuntStep);
         boolean conditionMet = treasureHuntStep.getDoneCondition().evaluateConditionMet();
         if (conditionMet){
             treasureHuntStepRepository.save(treasureHuntStep);

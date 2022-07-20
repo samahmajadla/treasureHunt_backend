@@ -14,6 +14,7 @@ public class TreasureHunt {
     public TreasureHunt(){
         this.completionStatus = CompletionStatus.NOT_STARTED;
         this.steps = new LinkedList<>();
+        this.currentStep = 0;
     }
     @Id
     @GeneratedValue

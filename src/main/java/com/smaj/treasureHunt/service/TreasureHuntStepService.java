@@ -2,6 +2,7 @@ package com.smaj.treasureHunt.service;
 
 import com.smaj.treasureHunt.model.CompletionStatus;
 import com.smaj.treasureHunt.model.Solution;
+import com.smaj.treasureHunt.model.TreasureHunt;
 import com.smaj.treasureHunt.model.TreasureHuntStep;
 import com.smaj.treasureHunt.repository.TreasureHuntStepRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -51,6 +52,11 @@ public class TreasureHuntStepService {
         boolean conditionMet = treasureHuntStep.getDoneCondition().evaluateConditionMet();
         if (conditionMet){
             treasureHuntStep.setCompletionStatus(CompletionStatus.COMPLETED);
+            TreasureHunt treasureHunt = treasureHuntStep.getTreasureHunt();
+
+            if (treasureHunt.getSteps().size()< treasureHuntStep.getOrderNumber()){
+                treasureHunt.setCurrentStep(treasureHuntStep.getOrderNumber()+1);
+            }
             treasureHuntStepRepository.save(treasureHuntStep);
         }
         return treasureHuntStep;

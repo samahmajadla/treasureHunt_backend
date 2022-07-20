@@ -26,6 +26,7 @@ public class StringMatchSolution extends Solution{
     @Override
     public boolean checkSolution(Solution guess) {
         StringMatchSolution solutionGuess = (StringMatchSolution) guess;
+        System.out.println(solutionGuess.answer);
         if (answer.equals(solutionGuess.getAnswer())){
             this.setSolution_found(true);
             return true;

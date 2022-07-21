@@ -37,6 +37,7 @@ public class TreasureHuntService {
     public TreasureHunt startTreasureHunt(long id) {
         TreasureHunt treasureHunt = treasureHuntRepository.findById(id).get();
         treasureHunt.setCompletionStatus(CompletionStatus.STARTED);
+        treasureHunt.setCurrentStep(1);
         return treasureHuntRepository.save(treasureHunt);
     }
 }

@@ -23,14 +23,14 @@ public class AdminController {
         return ResponseEntity.ok(adminService.addAdmin(admin));
     }
 
-    @PostMapping("/login")
-    public ResponseEntity login(@RequestParam String password){
-        boolean isAdmin =  adminService.isAdmin(password);
-        if (isAdmin) {
-            return ResponseEntity.ok().build();
-        }else{
-            return new ResponseEntity(HttpStatus.UNAUTHORIZED);
-        }
-    }
+//    @PostMapping("/login")
+//    public ResponseEntity login(@RequestParam String password){
+//        boolean isAdmin =  adminService.isAdmin(password);
+//        if (isAdmin) {
+//            return ResponseEntity.ok().build();
+//        }else{
+//            return new ResponseEntity(HttpStatus.UNAUTHORIZED);
+//        }
+//    }
 
 }

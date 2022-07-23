@@ -55,7 +55,7 @@ public class TreasureHuntStepService {
             TreasureHunt treasureHunt = treasureHuntStep.getTreasureHunt();
 
             if (treasureHunt.getSteps().size()< treasureHuntStep.getOrderNumber()-1){
-                treasureHunt.setCurrentStep(treasureHuntStep.getOrderNumber()+1);
+                treasureHunt.setCurrentStep(treasureHunt.getCurrentStep()+1);
             }
             treasureHuntStepRepository.save(treasureHuntStep);
         }

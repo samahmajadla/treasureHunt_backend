@@ -54,8 +54,10 @@ public class TreasureHuntStepService {
             treasureHuntStep.setCompletionStatus(CompletionStatus.COMPLETED);
             TreasureHunt treasureHunt = treasureHuntStep.getTreasureHunt();
 
-            if (treasureHunt.getSteps().size()> treasureHuntStep.getOrderNumber()-1){
+            if (treasureHunt.getSteps().size()> treasureHuntStep.getOrderNumber()){
                 treasureHunt.setCurrentStep(treasureHunt.getCurrentStep()+1);
+            } else{
+                treasureHunt.setCompletionStatus(CompletionStatus.COMPLETED);
             }
             treasureHuntStepRepository.save(treasureHuntStep);
         }

@@ -40,4 +40,15 @@ public class TreasureHuntService {
         treasureHunt.setCurrentStep(1);
         return treasureHuntRepository.save(treasureHunt);
     }
+
+    public long loginToTreasureHunt(String keyword, String password){
+        TreasureHunt treasureHunt = treasureHuntRepository.findByKeyword(keyword);
+        if (treasureHunt.getPassword().equals(password)){
+            return treasureHunt.getId();
+        } else{
+            return -1;
+        }
+
+
+    }
 }

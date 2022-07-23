@@ -3,6 +3,7 @@ package com.smaj.treasureHunt.controller;
 import com.smaj.treasureHunt.model.TreasureHunt;
 import com.smaj.treasureHunt.service.TreasureHuntService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -46,5 +47,15 @@ public class TreasureHuntController {
     @PutMapping("/startTreasureHunt")
     public ResponseEntity startTreasureHunt(@RequestParam long id){
         return ResponseEntity.ok(treasureHuntService.startTreasureHunt(id));
+    }
+
+    @PostMapping("/login")
+    public ResponseEntity login(@RequestParam String keyword, @RequestParam String password){
+        long treasureHuntId =  treasureHuntService.loginToTreasureHunt(keyword, password);
+        if (treasureHuntId > 0) {
+            return getTreasureHunt(treasureHuntId);
+        }else{
+            return new ResponseEntity(HttpStatus.UNAUTHORIZED);
+        }
     }
 }

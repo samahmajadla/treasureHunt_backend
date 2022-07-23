@@ -6,4 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface TreasureHuntRepository extends CrudRepository<TreasureHunt, Long> {
+    TreasureHunt findByKeyword(String keyword);
 }

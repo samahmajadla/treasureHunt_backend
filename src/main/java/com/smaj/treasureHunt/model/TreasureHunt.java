@@ -20,7 +20,11 @@ public class TreasureHunt {
     @GeneratedValue
     private long id;
 
+    @Column(unique= true)
+    private String keyword;
     private String recipient;
+
+    private String password;
 
     private int currentStep;
     private String creator;
@@ -33,8 +37,24 @@ public class TreasureHunt {
     @Enumerated(EnumType.STRING)
     private CompletionStatus completionStatus;
 
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
     public int getCurrentStep() {
         return currentStep;
+    }
+
+    public String getKeyword() {
+        return keyword;
+    }
+
+    public void setKeyword(String keyword) {
+        this.keyword = keyword;
     }
 
     public void setCurrentStep(int currentStep) {
